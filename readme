@@ -1,0 +1,96 @@
+
+# React Project with Jest Testing
+
+This repository contains a React application with unit tests powered by Jest. Jest is a delightful JavaScript testing framework, designed for simplicity and performance.
+
+## Features
+
+- **React**: A JavaScript library for building user interfaces.
+- **Jest**: A comprehensive testing framework for JavaScript, providing support for assertions, mocking, snapshot testing, and more.
+
+## Installation
+
+To get started with the project, follow these steps:
+
+1. Clone the repository:
+
+   \`\`\`bash
+   git clone https://github.com/your-username/your-repo-name.git
+   \`\`\`
+
+2. Navigate into the project directory:
+
+   \`\`\`bash
+   cd your-repo-name
+   \`\`\`
+
+3. Install the project dependencies:
+
+   \`\`\`bash
+   npm install
+   \`\`\`
+
+## Running the Tests
+
+You can run the tests using Jest by executing the following command:
+
+\`\`\`bash
+npm test
+\`\`\`
+
+This will run all tests located in files named \`*.test.js\` or \`*.spec.js\` inside the \`__tests__\` folder or next to the files they test.
+
+### Watching Files for Changes
+
+To have Jest watch files and rerun tests automatically upon saving changes, run:
+
+\`\`\`bash
+npm test -- --watch
+\`\`\`
+
+### Test Coverage
+
+To check the test coverage, use:
+
+\`\`\`bash
+npm test -- --coverage
+\`\`\`
+
+This will generate a coverage report and output it to the terminal.
+
+## Writing Tests
+
+Jest is flexible enough to test React components, functions, or the entire behavior of your application. Here’s a basic example of how to write a test for a React component.
+
+\`\`\`javascript
+// ExampleComponent.test.js
+
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import ExampleComponent from './ExampleComponent';
+
+test('renders the component with the correct text', () => {
+  render(<ExampleComponent />);
+  const linkElement = screen.getByText(/example text/i);
+  expect(linkElement).toBeInTheDocument();
+});
+\`\`\`
+
+## Custom Jest Configuration
+
+If you need to customize Jest’s configuration, create a \`jest.config.js\` file in the root of your project and add the necessary configurations. Here's an example configuration:
+
+\`\`\`javascript
+module.exports = {
+  setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
+  testEnvironment: 'jsdom',
+  moduleNameMapper: {
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+  },
+};
+\`\`\`
+
+## Additional Resources
+
+- [Jest Documentation](https://jestjs.io/docs/getting-started)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
